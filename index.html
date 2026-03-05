@@ -2,8 +2,9 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Wedding Of Irma & Hari</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
@@ -502,26 +503,21 @@ teY(-50%);
   <source src="audio/music.mp4" type="audio/mpeg">
 </audio>
 
-<!-- PAGE 1 COVER -->
+<!-- PAGE 1 coba COVER -->
 <section class="page active" style="background-image:url('img/bgcover.jpg')">
   <div class="overlay"></div>
   <div class="content">
   <div class="cover">
   <img src="img/cover.jpg" alt="Foto Pengantin" class="foto-tengah">
 </div>
-    
-    <small>The Wedding Of</small>
-
-   <h2 class="nama-mempelai">Irma & Hari</h2>
-    <p>Kepada Yth<br><b id="guest">Tamu Undangan</b></p>
-    <br>
-    <button class="gift-btn"; onclick="openInvite()">💌 Buka Undangan</button>
-  </div>
+  <h2 class="nama-mempelai">Irma & Hari</h2>
+  <p>Kepada Yth.</p>
+  <b id="guest">Tamu Undangan</b><br><br>
+  <button class="gift-btn"; onclick="openInvite()">💌 Buka Undangan</button>
+  
 </section>
-<!-- PAGE coba Pesan -->
 
- 
-<!-- PAGE a -->
+<!-- HALAMAN 2 -->
 <section class="page" style="background-image:url('img/bg1.jpg')">
   <div class="overlay"></div>
   <div class="content">
@@ -543,48 +539,49 @@ tanda-tanda (kebesaran Allah) bagi kaum yang berpikir(QS. Ar-Rum : 21)</p>
   </div>
 </section>
 
+<audio id="bgMusic" loop>
+  <source src="musik.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function openInvite(){
+  document.getElementById("bgMusic").play();
+  index = 1;
+  show(index);
+}
+
+/* ===================== */
+/* PARAMETER NAMA TAMU  */
+/* ===================== */
+document.addEventListener("DOMContentLoaded", function(){
+
+  function capitalizeWords(str){
+    return str.toLowerCase().replace(/\b\w/g, l => l.toUpperCase());
+  }
+
+  const params = new URLSearchParams(window.location.search);
+  let guestName = params.get("to");
+  const guestElement = document.getElementById("guest");
+
+  if(guestElement){
+    if(guestName){
+      guestName = decodeURIComponent(guestName.replace(/\+/g," "));
+      guestElement.innerText = capitalizeWords(guestName);
+    }else{
+      guestElement.innerText = "Tamu Undangan";
+    }
+  }
+
+});
+</script>
+<!-- PAGE 1 COVER -->
+
+<!-- PAGE coba Pesan -->
+
+ 
+<!-- PAGE a -->
+
 <!-- page perkelanan -->
-<section class="page active" style="background-image:url('img/bg3.jpg')">
-  <div class="overlay"></div>
-  <div class="content">
-  
-  <h1 class="shine-text">ٱلسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ ٱللَّٰهِ وَبَرَكَاتُهُ</h2>
-    <p>Dengan kerendahan hati, kami mengundang Bapak/ Ibu/ Saudara/ i untuk menghadiri pernikahan kami :</p><br>
-  <div class="cover">
-   
-  <img src="img/cover.jpg" alt="Foto Pengantin" class="foto-kenal">
-</div>
-    <br>
-     <h2 class="nama-mempelai">Irma Wigatiningsih</h2>
-    <p style="font-size:12px;margin-top:15px">
-    <p>Putri dari</p>
-    <p>Bpk Suprihno & Ibu Muisah</p>
-    <p>Tlogobulu, Kaligesing, Purworejo</p>
-	<br>
-  <button onclick="prev()">⬅ Prev</button>
-  <button onclick="next()">Next ➡</button>
-
-  
-  </div>
-  
-</section>
-<section class="page active" style="background-image:url('img/bg3.jpg')">
-  <div class="overlay"></div>
-  <div class="content">
-  <div class="cover">
-  <img src="img/cover.jpg" alt="Foto Pengantin" class="foto-kenal">
-</div>
-    <br>
-     <h2 class="nama-mempelai">Hari Rachmadi</h2>
-    <p style="font-size:12px;margin-top:15px">
-    <p>Putra dari</p>
-    <p>Bpk Sugimin & Ibu Lanjar</p>
-    <p> Sumberharjo, Prambanan, Sleman</p> <br>
-	<button onclick="prev()">⬅ Prev</button>
-  <button onclick="next()">Next ➡</button>
-  </div>
-</section>
-
 
 
 <section class="page" style="background-image:url('img/bg6.jpeg')">
@@ -612,7 +609,7 @@ tanda-tanda (kebesaran Allah) bagi kaum yang berpikir(QS. Ar-Rum : 21)</p>
   </div>
 </section>
 
-<section class="page" style="background-image:url('img/bg1.jpg')">
+<section class="page" style="background-image:url('img/bg5.jpg')">
   <div class="overlay"></div>
   <div class="content">
    
@@ -641,7 +638,7 @@ tanda-tanda (kebesaran Allah) bagi kaum yang berpikir(QS. Ar-Rum : 21)</p>
   </div>
 </section>
 <!-- PAGE 3 GALERI -->
-<section class="page" style="background-image:url('img/bg2.jpeg')">
+<section class="page" style="background-image:url('img/bg4.jpg')">
  
   <div class="overlay"></div>
   <div class="content">
@@ -729,9 +726,7 @@ tanda-tanda (kebesaran Allah) bagi kaum yang berpikir(QS. Ar-Rum : 21)</p>
   .gallery{ column-count:2; }
 }
 </style>
-</head>
 
-<body>
 
 <br>
 
@@ -742,13 +737,6 @@ tanda-tanda (kebesaran Allah) bagi kaum yang berpikir(QS. Ar-Rum : 21)</p>
   <img src="img/foto1.jpeg">
   <img src="img/foto2.jpeg">
   <img src="img/foto3.jpeg">
-<img src="img/foto1.jpeg">
-  <img src="img/foto2.jpeg">
-  <img src="img/foto3.jpeg">
-  <img src="img/foto1.jpeg">
-  <img src="img/foto2.jpeg">
-  <img src="img/foto3.jpeg">
-	
 </div>
 
 <!-- LIGHTBOX -->
@@ -954,9 +942,7 @@ document.addEventListener("DOMContentLoaded", function(){
     opacity:1;
 }
 </style>
-</head>
 
-<body>
 <br>
 <div class="overlay"></div>
   <div class="content">
@@ -1078,9 +1064,6 @@ h6{
     color:#777;
 }
 </style>
-</head>
-
-<body>
 
 <h2>Menuju Hari Bahagia</h2>
 
@@ -1288,9 +1271,8 @@ button:hover {
   }
 }
 </style>
-</head>
 
-<body>
+
 
 <div class="containerpesan">
   <h2>💌 Ucapan & Konfirmasi Kehadiran</h2>
@@ -1525,18 +1507,33 @@ function toggleMusic(){
   }
 }
 
-const params = new URLSearchParams(window.location.search);
-const nama = params.get("to");
 
-document.addEventListener("DOMContentLoaded", function() {
-  document.getElementById("guest").innerText = nama ? decodeURIComponent(nama) : "Tamu Undangan";
+function capitalizeWords(str) {
+  return str.replace(/\b\w/g, char => char.toUpperCase());
+}
+
+document.addEventListener("DOMContentLoaded", function(){
+
+  function capitalizeWords(str) {
+    return str.toLowerCase().replace(/\b\w/g, l => l.toUpperCase());
+  }
+
+  const params = new URLSearchParams(window.location.search);
+  let guestName = params.get("to");
+
+  const guestElement = document.getElementById("guest");
+
+  if (guestElement) {
+    if (guestName) {
+      guestName = decodeURIComponent(guestName.replace(/\+/g, " "));
+      guestElement.innerText = capitalizeWords(guestName);
+    } else {
+      guestElement.innerText = "Tamu Undangan";
+    }
+  }
+
 });
-
 </script>
 
 </body>
-
 </html>
-
-
-
