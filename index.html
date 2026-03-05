@@ -1525,24 +1525,18 @@ function toggleMusic(){
   }
 }
 
+const params = new URLSearchParams(window.location.search);
+const nama = params.get("to");
 
-function capitalizeWords(str) {
-  return str.replace(/\b\w/g, char => char.toUpperCase());
-}
-
-const q = new URLSearchParams(window.location.search);
-const guestName = q.get('to');
-const guest = document.getElementById("guest");
-
-guest.innerText = guestName 
-  ? capitalizeWords(decodeURIComponent(guestName)) 
-  : "Tamu Undangan";
-
+document.addEventListener("DOMContentLoaded", function() {
+  document.getElementById("guest").innerText = nama ? decodeURIComponent(nama) : "Tamu Undangan";
+});
 
 </script>
 
 </body>
 
 </html>
+
 
 
